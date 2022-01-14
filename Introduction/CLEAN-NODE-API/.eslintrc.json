@@ -1,6 +1,6 @@
 {
     "extends": "standard-with-typescript",
     "parserOptions": {
-        "project": "./CLEAN-NODE-API/tsconfig.json"
+        "project": "./tsconfig.json"
     }
 }
