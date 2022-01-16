@@ -1,5 +1,5 @@
-describe("Name of the group", () => {
-  test("should ", () => {
+describe('', () => {
+  test('', () => {
     expect(1).toBe(1);
   });
 });
