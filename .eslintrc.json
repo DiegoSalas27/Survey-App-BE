@@ -1,0 +1,19 @@
+{
+    "extends": "standard-with-typescript",
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    },
+    "overrides": [
+        {
+            "files": ["*.ts"],
+            "rules": {
+                "@typescript-eslint/no-unused-vars" : "off",
+                "@typescript-eslint/space-before-function-paren": "off",
+                "space-before-blocks": "off",
+                "@typescript-eslint/semi": "off",
+                "@typescript-eslint/indent": "off",
+                "eol-last": "off"
+            }
+        }
+    ]
+}

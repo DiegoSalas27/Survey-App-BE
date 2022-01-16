@@ -1,0 +1,3 @@
+#ignore linting this modules
+node_modules
+dist

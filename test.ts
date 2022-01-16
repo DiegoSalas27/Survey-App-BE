@@ -1,13 +1,13 @@
-const members = [
-    {name: 'foo', age: 20},
-]
-
-const someMember = members.find(member => member.age == 30);
-
-console.log(someMember?.age);
-
-function sum(num: number): number {
-    if(num % 2 == 0) return num;
-    num;
+function teste(): number {
+  return 1;
 }
 
+teste();
+
+function are(): void {
+  console.log(1);
+}
+
+function are2(): number {
+  return 2;
+}
