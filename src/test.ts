@@ -4,10 +4,10 @@ function teste(): number {
 
 teste();
 
-function are(): void  {
+function are(): void {
   console.log(1);
 }
 
-function are2(): number  {
+function are2(): number {
   return 2;
 }
