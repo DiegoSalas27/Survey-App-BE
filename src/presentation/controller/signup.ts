@@ -2,7 +2,7 @@ import { MissingParamError } from '../errors/missing-param-error';
 import { httpResponse, HttpRequest } from '../protocols/http.interface';
 import { badRequest } from '../helpers/http-helper';
 import { Controller } from '../protocols/controller.interface';
-import { EmailValidator } from '../protocols/email-validator';
+import { EmailValidator } from '../protocols/email-validator.interface';
 import { InvalidParamError } from '../errors/invalid-param-error';
 
 export class SignUpController implements Controller {
