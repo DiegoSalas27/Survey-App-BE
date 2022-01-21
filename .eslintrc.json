@@ -16,7 +16,8 @@
                 "no-multi-spaces": "off",
                 "@typescript-eslint/strict-boolean-expressions": "off",
                 "comma-dangle": "off",
-                "@typescript-eslint/explicit-function-return-type": "off"
+                "@typescript-eslint/explicit-function-return-type": "off",
+                "@typescript-eslint/method-signature-style": "off"
             }
         }
     ]
