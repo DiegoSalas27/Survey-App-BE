@@ -1,4 +1,13 @@
-# 1.1.0 (2022-01-21)
+# [1.2.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.1.0...v1.2.0) (2022-01-21)
+
+
+### Features
+
+* create pre-release for uat ([662ae93](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/662ae9371b127e10c2b30b84bb87d97803d2a390))
+
+
+
+# [1.1.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/f438c250d884f88abfca14fd01732e14e3bcb40f...v1.1.0) (2022-01-21)
 
 
 ### Features
