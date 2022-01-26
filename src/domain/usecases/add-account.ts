@@ -7,7 +7,7 @@ export interface AddAccountModel {
 }
 
 export interface AddAccount {
-  add(account: AddAccountModel): AccountModel;
+  add(account: AddAccountModel): Promise<AccountModel>
 }
 
 // It's in the domain layer where all of our bussines rules should go
