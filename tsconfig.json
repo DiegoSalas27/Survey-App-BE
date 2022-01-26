@@ -11,6 +11,9 @@
     "paths": {
       "@presentation/*": [
         "src/presentation/*",
+      ],
+      "@domain/*": [
+        "src/domain/*",
       ]
     },
     "strictNullChecks": true,                         /* When type checking, take into account `null` and `undefined`. */
