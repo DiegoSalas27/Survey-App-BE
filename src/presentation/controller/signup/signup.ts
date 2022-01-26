@@ -11,7 +11,7 @@ export class SignUpController implements Controller {
     this.addAccount = addAccount;
   }
 
-  handle(httpRequest: HttpRequest): httpResponse | any {
+  handle(httpRequest: HttpRequest): httpResponse {
     try {
       const requiredFields = ['name', 'email', 'password', 'passwordConfirmation'];
       for (const field of requiredFields) {
@@ -30,11 +30,16 @@ export class SignUpController implements Controller {
         return badRequest(new InvalidParamError('email'));
       }
 
-      return this.addAccount.add({
+      const account = this.addAccount.add({
         name,
         email,
-        password
+        password,
       });
+
+      return {
+        statusCode: 200,
+        body: account,
+      };
     } catch (error) {
       return serverError();
     }
