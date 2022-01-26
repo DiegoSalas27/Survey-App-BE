@@ -3,17 +3,17 @@
  * https://jestjs.io/docs/configuration
  */
 
-import { resolve } from 'path';
+const { resolve } = require('path')
 
-export default {
-  // roots: ['<rootDir>/src'],
+module.exports = {
+  roots: ['<rootDir>/src'],
   collectCoverageFrom: ['<rootDir>/src/**/*.ts'],
   coverageDirectory: 'coverage',
   testEnvironment: 'node',
   moduleNameMapper: {
-    '@presentation/(.*)$': resolve(__dirname, './src/presentation/$1'),
+    '@presentation/(.*)$': resolve(__dirname, './src/presentation/$1')
   },
   transform: {
-    '.+\\.ts$': 'ts-jest',
-  },
-};
+    '.+\\.ts$': 'ts-jest'
+  }
+}
