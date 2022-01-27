@@ -13,6 +13,7 @@ module.exports = {
   moduleNameMapper: {
     '@presentation/(.*)$': resolve(__dirname, './src/presentation/$1')
   },
+  preset: '@shelf/jest-mongodb',
   transform: {
     '.+\\.ts$': 'ts-jest'
   }
