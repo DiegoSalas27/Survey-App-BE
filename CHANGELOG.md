@@ -1,3 +1,14 @@
+# [1.4.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.3.0...v1.4.0) (2022-01-28)
+
+
+### Features
+
+* ensure AccountMongoRepository returns an account on success ([fa6b461](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/fa6b461ce827a809e082021b3914ea9554dbd61c))
+* ensure BcryptAdapter calls bcrypt with correct value ([91f41ea](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/91f41ea3c9aa90c46f6cd738c8c97c22f2a6fed8))
+* ensure BcryptAdapter returns a hash on success ([6c4fbba](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/6c4fbbacb96fe5b854413bd28af6c5d85e113cbb))
+
+
+
 # [1.3.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.2.0...v1.3.0) (2022-01-27)
 
 
