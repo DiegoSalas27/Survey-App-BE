@@ -17,6 +17,9 @@
       ],
       "@data/*": [
         "src/data/*"
+      ],
+      "@infrastructure/*": [
+        "src/infrastructure/*"
       ]
     },
     "strictNullChecks": false,                         /* When type checking, take into account `null` and `undefined`. */

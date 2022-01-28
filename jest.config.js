@@ -11,7 +11,8 @@ module.exports = {
   coverageDirectory: 'coverage',
   testEnvironment: 'node',
   moduleNameMapper: {
-    '@presentation/(.*)$': resolve(__dirname, './src/presentation/$1')
+    '@presentation/(.*)$': resolve(__dirname, './src/presentation/$1'),
+    '@infrastructure/(.*)$': resolve(__dirname, './src/infrastructure/$1')
   },
   preset: '@shelf/jest-mongodb',
   transform: {
