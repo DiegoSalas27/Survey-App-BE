@@ -1,7 +1,7 @@
 import { MongoHelper } from '../helpers/mongo-helper'
 import { AccountMongoRepository } from './account';
 
-describe('Account Mongo Repository', () => {
+describe('Account Mongo Repository', () => { // This is an integration test
   beforeAll(async () => {
     await MongoHelper.connect(process.env.MONGO_URL);
   })
