@@ -7,12 +7,11 @@ import { ObjectId } from 'mongodb'
 export class AccountMongoRepository implements AddAccountRepository {
   async add(accountData: AddAccountModel): Promise<AccountModel> {
     const accountCollection = MongoHelper.getCollection('accounts')
-    const { value: document } = await accountCollection.findOneAndUpdate(
+    const { value: account } = await accountCollection.findOneAndUpdate(
       { _id: new ObjectId() },
       { $setOnInsert: accountData },
       { upsert: true, returnDocument: 'after' }
     )
-    const { _id, ...accountWithoutId } = document;
-    return Object.assign({}, accountWithoutId as any, { id: _id });
+    return MongoHelper.map(account);
   }
 }
