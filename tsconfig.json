@@ -20,6 +20,9 @@
       ],
       "@infrastructure/*": [
         "src/infrastructure/*"
+      ],
+      "@main/*": [
+        "src/main/*"
       ]
     },
     "strictNullChecks": false,                         /* When type checking, take into account `null` and `undefined`. */

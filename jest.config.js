@@ -12,7 +12,8 @@ module.exports = {
   testEnvironment: 'node',
   moduleNameMapper: {
     '@presentation/(.*)$': resolve(__dirname, './src/presentation/$1'),
-    '@infrastructure/(.*)$': resolve(__dirname, './src/infrastructure/$1')
+    '@infrastructure/(.*)$': resolve(__dirname, './src/infrastructure/$1'),
+    '@main/(.*)$': resolve(__dirname, './src/main/$1')
   },
   preset: '@shelf/jest-mongodb',
   transform: {
