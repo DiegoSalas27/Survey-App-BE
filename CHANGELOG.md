@@ -1,3 +1,18 @@
+# [1.5.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.4.0...v1.5.0) (2022-01-29)
+
+
+### Features
+
+* add ExpressRouteAdapter ([9dbc878](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/9dbc8781531a1489970774410fc3abf9a5c41e8f))
+* add SignUp Factory ([8278f6d](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/8278f6da67d7ca8145288678528ebf5b51fc8dd4))
+* add signup route integration test ([faff3a7](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/faff3a7199a997e17de76af702e3bbb80a4a07c2))
+* connect to mongodb before app listen ([de818fe](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/de818feffd16ad7557fa9ce2ade04265185632a2))
+* ensure cors is enabled ([b4a038b](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/b4a038ba50732bfb6b9202b4213bf5edd2ccb9f5))
+* ensure requests parse body as json ([8ee87e2](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/8ee87e2008c5b9150c3702fbe3c2e98e6dbc3756))
+* ensure requests return json as default content type ([243b97f](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/243b97fd588877dc20aa1ebc82872f4eadeeff82))
+
+
+
 # [1.4.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.3.0...v1.4.0) (2022-01-28)
 
 
