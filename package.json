@@ -1,6 +1,6 @@
 {
   "name": "clean-node-api",
-  "version": "1.5.0",
+  "version": "1.4.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "test:verbose": "jest --passWithNoTests --runInBand",
     "test:unit": "npm test -- --watch -c jest-unit.config.js",
     "test:integration": "npm test -- --watch -c jest-integration.config.js",
-    "test:staged": "npm test --changedSince",
+    "test:staged": "npm test --findRelatedTests",
     "test:ci": "npm test -- --coverage",
     "prepare": "husky install"
   },
