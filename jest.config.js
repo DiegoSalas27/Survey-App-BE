@@ -13,6 +13,8 @@ module.exports = {
   moduleNameMapper: {
     '@presentation/(.*)$': resolve(__dirname, './src/presentation/$1'),
     '@infrastructure/(.*)$': resolve(__dirname, './src/infrastructure/$1'),
+    '@data/(.*)$': resolve(__dirname, './src/data/$1'),
+    '@domain/(.*)$': resolve(__dirname, './src/domain/$1'),
     '@main/(.*)$': resolve(__dirname, './src/main/$1')
   },
   preset: '@shelf/jest-mongodb',
