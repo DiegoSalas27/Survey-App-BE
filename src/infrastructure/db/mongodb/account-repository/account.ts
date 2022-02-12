@@ -1,8 +1,8 @@
 import { AddAccountRepository } from '@data/protocols/add-account-repository'
 import { AccountModel } from '@domain/models/account'
 import { AddAccountModel } from '@domain/usecases/add-account'
-import { MongoHelper } from '../helpers/mongo-helper'
 import { ObjectId } from 'mongodb'
+import { MongoHelper } from '../helpers/mongo-helper'
 
 export class AccountMongoRepository implements AddAccountRepository {
   async add(accountData: AddAccountModel): Promise<AccountModel> {
@@ -12,6 +12,6 @@ export class AccountMongoRepository implements AddAccountRepository {
       { $setOnInsert: accountData },
       { upsert: true, returnDocument: 'after' }
     )
-    return MongoHelper.map(account);
+    return MongoHelper.map(account)
   }
 }
