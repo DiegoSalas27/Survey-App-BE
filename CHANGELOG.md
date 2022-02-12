@@ -1,3 +1,17 @@
+# [1.6.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.5.0...v1.6.0) (2022-02-12)
+
+
+### Features
+
+* add LogMongoRepository to SignUpFactory ([a2d4b49](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/a2d4b49e4d3944e122b0a5b85b2f30ccbfd05db5))
+* add LogMongoRepository to SignUpFactory ([5878edf](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/5878edfd3643c5505ef56391359a93db16710a2d))
+* ensure LogControllerDecorator calls controller with correct value ([df6573c](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/df6573cb12adb0de2d0f5d5e150ac4e15625ed0f))
+* ensure login LogControllerDecorator call LogErrorRepository with correct error if controller returns a server error ([f87fbae](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/f87fbaea2b27986a78d2de1ba8b3cd767fbeacdc))
+* ensure LogMongoRepository creates an error log on success ([eac70cb](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/eac70cbb6651112ccf9352b5d5c3199b4402ebf2))
+* updated globalConfig ([b2a3b78](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/b2a3b78d8eca466911a15780d6b5aca9304f653e))
+
+
+
 # [1.5.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.4.0...v1.5.0) (2022-01-29)
 
 
@@ -50,18 +64,6 @@
 ### Features
 
 * create pre-release for uat ([662ae93](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/662ae9371b127e10c2b30b84bb87d97803d2a390))
-
-
-
-# [1.1.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/f438c250d884f88abfca14fd01732e14e3bcb40f...v1.1.0) (2022-01-21)
-
-
-### Features
-
-* added pre-release workflow for uat environment ([9f2bf67](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/9f2bf67eeb2ea1ed9ea190439ddc99eaad937f50))
-* ensure SignUpController returns 400 if no email is provided ([dfecca4](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/dfecca4aec051ebbf9ad292332adcd475a698dc4))
-* ensure SignUpController returns 400 if no name is provided ([f438c25](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/f438c250d884f88abfca14fd01732e14e3bcb40f))
-* ensure SignUpController returns an error if no name is provided ([0545e20](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/0545e20fd1ed3548cfbf73873d9038e1b9953a34))
 
 
 
