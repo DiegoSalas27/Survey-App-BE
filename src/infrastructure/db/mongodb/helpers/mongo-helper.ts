@@ -1,10 +1,10 @@
-import { ClientSession, Collection, MongoClient } from 'mongodb'
+import { Collection, MongoClient } from 'mongodb'
 
 export const transactionOptions = {
   readPreference: 'primary',
   readConcern: { level: 'local' },
   writeConcern: { w: 'majority' }
-};
+}
 
 export const MongoHelper = {
   client: null as MongoClient,
@@ -19,10 +19,6 @@ export const MongoHelper = {
 
   getCollection(name: string): Collection {
     return this.client.db().collection(name)
-  },
-
-  startSession(): ClientSession {
-    return this.client.startSession();
   },
 
   map: (document: any): any => {
