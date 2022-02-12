@@ -1,7 +1,6 @@
-import { Authentication } from '@domain/usecases/authentication'
+import { Authentication, Controller, EmailValidator, HttpRequest, httpResponse } from './login-protocols'
 import { InvalidParamError, MissingParamError } from '@presentation/errors'
 import { badRequest, serverError, unauthorized } from '@presentation/helpers/http-helper'
-import { Controller, EmailValidator, HttpRequest, httpResponse } from '../signup/signup-protocols'
 
 export class LoginController implements Controller {
   private readonly emailValidator: EmailValidator
@@ -30,7 +29,7 @@ export class LoginController implements Controller {
 
       const accessToken = await this.authentication.auth(email, password)
       if (!accessToken) {
-          return unauthorized();
+        return unauthorized()
       }
     } catch (error: any) {
       return serverError(error)
