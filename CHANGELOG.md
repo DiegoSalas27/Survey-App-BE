@@ -1,3 +1,16 @@
+# [1.8.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.7.0...v1.8.0) (2022-02-17)
+
+
+### Features
+
+* ensure DbAuthentication calls HashComparer with correct values ([46bf7aa](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/46bf7aa70278b86d74126ccd9e0faf279843146a))
+* ensure DbAuthentication calls LoadAccountByEmailRepository with correct email ([31bf158](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/31bf1581994f51d3e9323611bfe1060be214949a))
+* ensure DbAuthentication calls TokenGenerator with correct id ([3300957](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/330095702087fa456e5b595f77b1299dfa0be1e5))
+* ensure DbAuthentication calls UpdateAccessTokenRepository with correct values ([bff2fa5](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/bff2fa57f0b3a2227618fbd04f2c54052fc11acc))
+* ensure DbAuthentication returns a token on success ([4823b34](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/4823b34d054e333306a149b886d6d154b0112b29))
+
+
+
 # [1.7.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.6.0...v1.7.0) (2022-02-13)
 
 
@@ -54,26 +67,6 @@
 * ensure AccountMongoRepository returns an account on success ([fa6b461](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/fa6b461ce827a809e082021b3914ea9554dbd61c))
 * ensure BcryptAdapter calls bcrypt with correct value ([91f41ea](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/91f41ea3c9aa90c46f6cd738c8c97c22f2a6fed8))
 * ensure BcryptAdapter returns a hash on success ([6c4fbba](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/6c4fbbacb96fe5b854413bd28af6c5d85e113cbb))
-
-
-
-# [1.3.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.2.0...v1.3.0) (2022-01-27)
-
-
-### Features
-
-* ensure DbAddAccount calls AddAccountRepository with correct values ([6a740ad](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/6a740ad338dba679288501fbd2136ca5c9eb4a20))
-* ensure DbAddAccount calls Encrypter with correct password ([2908887](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/29088875d3a7a145aafd3be974c8592b2c78effd))
-* ensure EmailValidatorAdapter returns false if validator returns false ([51c3f86](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/51c3f869b53a980c853e4472c3d035a3ff553d79))
-* ensure EmailValidatorAdapter returns true if validator returns true ([c7d4039](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/c7d4039dbdd5f799f2ddbe0f7eba9b979438bee7))
-* ensure SignUpController calls AddAccount with correct values ([f8b3f03](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/f8b3f032bd9c238aa1ebb6b7b20a79f8548f8864))
-* ensure SignUpController return 500 if EmailValidator throws ([7df100d](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/7df100d84defa4e45f3b373d72db3b6bd18f4e2d))
-* ensure SignUpController returns 200 if valid data is provided ([d2d8e47](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/d2d8e4796605ccd8387158ebfdaf0f3291e203a4))
-* ensure SignUpController returns 400 if an invalid email is provided ([2c92636](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/2c9263604d8bb731ce44acd4c5f6bd953685d177))
-* ensure SignUpController returns 400 if no password is provided ([202addb](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/202addb8bbb082b5aaceab95e22d29ba38af36f8))
-* ensure SignUpController returns 400 if passwordConfirmation fails ([b63b4fe](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/b63b4fe402a8d363fa67e4386d27ab5bd8029ef2))
-* ensure SignUpController returns 400 is no password confirmation is provided ([bb5d0da](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/bb5d0da51492b187cf5d70145ca4aa2583072a0f))
-* ensureDbAddAccount returns an account on success ([e795f32](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/e795f32ec4a67de0bded724460291d5dc5dfe4bf))
 
 
 
