@@ -1,16 +1,3 @@
-# [1.8.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.7.0...v1.8.0) (2022-02-17)
-
-
-### Features
-
-* ensure DbAuthentication calls HashComparer with correct values ([46bf7aa](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/46bf7aa70278b86d74126ccd9e0faf279843146a))
-* ensure DbAuthentication calls LoadAccountByEmailRepository with correct email ([31bf158](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/31bf1581994f51d3e9323611bfe1060be214949a))
-* ensure DbAuthentication calls TokenGenerator with correct id ([3300957](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/330095702087fa456e5b595f77b1299dfa0be1e5))
-* ensure DbAuthentication calls UpdateAccessTokenRepository with correct values ([bff2fa5](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/bff2fa57f0b3a2227618fbd04f2c54052fc11acc))
-* ensure DbAuthentication returns a token on success ([4823b34](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/4823b34d054e333306a149b886d6d154b0112b29))
-
-
-
 # [1.7.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.6.0...v1.7.0) (2022-02-13)
 
 
