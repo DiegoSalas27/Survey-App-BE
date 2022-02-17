@@ -1,10 +1,12 @@
-import { HashComparer } from '@data/protocols/cryptography/hash-comparer'
-import { TokenGenerator } from '@data/protocols/cryptography/token-generator'
-import { LoadAccountByEmailRepository } from '@data/protocols/db/load-account-by-email-repository'
-import { UpdateAccessTokenRepository } from '@data/protocols/db/update-access-token-repository'
-import { AuthenticationModel } from '@domain/usecases/authentication'
-import { AccountModel } from '../add-account/db-add-account-protocols'
 import { DbAuthentication } from './db-authentication'
+import {
+  AccountModel,
+  AuthenticationModel,
+  HashComparer,
+  LoadAccountByEmailRepository,
+  TokenGenerator,
+  UpdateAccessTokenRepository
+} from './db-authentication-protocols'
 
 const makeFakeAccount = (): AccountModel => ({
   id: 'any_id',
@@ -67,7 +69,12 @@ const makeSut = (): SutTypes => {
   const tokenGeneratorStub = makeTokenGenerator()
   const hashComparerStub = makeHashComparer()
   const loadAccountByEmailRepositoryStub = makeLoadAccountByEmailRepository()
-  const sut = new DbAuthentication(loadAccountByEmailRepositoryStub, hashComparerStub, tokenGeneratorStub, updateAccessTokenRepositoryStub)
+  const sut = new DbAuthentication(
+    loadAccountByEmailRepositoryStub,
+    hashComparerStub,
+    tokenGeneratorStub,
+    updateAccessTokenRepositoryStub
+  )
 
   return {
     sut,
