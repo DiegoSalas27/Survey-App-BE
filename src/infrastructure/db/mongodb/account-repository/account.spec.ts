@@ -1,4 +1,4 @@
-import { Collection } from 'mongodb';
+import { Collection, ObjectId } from 'mongodb';
 import { MongoHelper } from '../helpers/mongo-helper'
 import { AccountMongoRepository } from './account';
 
@@ -53,5 +53,24 @@ describe('Account Mongo Repository', () => { // This is an integration test
     const sut = makeSut();
     const account = await sut.loadByEmail('any_email@mail.com')
     expect(account).toBeFalsy()
+  })
+
+  test('Should update the account accessToken on updateAccessToken success', async () => {
+    const sut = makeSut();
+    const accountData = {
+      name: 'any_name',
+      email: 'any_email@mail.com',
+      password: 'any_password'
+    }
+    let { value: account } = await accountCollection.findOneAndUpdate(
+      { _id: new ObjectId() },
+      { $setOnInsert: accountData },
+      { upsert: true, returnDocument: 'after' }
+    )
+    expect(account.accessToken).toBeFalsy()
+    await sut.updateAccessToken(account._id as any, 'any_token')
+    account = await accountCollection.findOne({ _id: account._id })
+    expect(account).toBeTruthy()
+    expect(account.accessToken).toBe('any_token')
   })
 })
