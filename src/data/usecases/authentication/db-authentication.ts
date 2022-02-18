@@ -1,29 +1,14 @@
-import {
-  Authentication,
-  AuthenticationModel,
-  HashComparer,
-  LoadAccountByEmailRepository,
-  Encrypter,
-  UpdateAccessTokenRepository
-} from './db-authentication-protocols'
+import { LoadAccountByEmailRepository } from '@data/protocols/db/account/load-account-by-email-repository'
+import { UpdateAccessTokenRepository } from '@data/protocols/db/account/update-access-token-repository'
+import { Authentication, AuthenticationModel, HashComparer, Encrypter } from './db-authentication-protocols'
 
 export class DbAuthentication implements Authentication {
-  private readonly loadAccountByEmailRepository: LoadAccountByEmailRepository
-  private readonly hashComparer: HashComparer
-  private readonly encrypter: Encrypter
-  private readonly updateAccessTokenRepository: UpdateAccessTokenRepository
-
   constructor(
-    loadAccountByEmailRepository: LoadAccountByEmailRepository,
-    hashComparer: HashComparer,
-    encrypter: Encrypter,
-    updateAccessTokenRepository: UpdateAccessTokenRepository
-  ) {
-    this.loadAccountByEmailRepository = loadAccountByEmailRepository
-    this.hashComparer = hashComparer
-    this.encrypter = encrypter
-    this.updateAccessTokenRepository = updateAccessTokenRepository
-  }
+    private readonly loadAccountByEmailRepository: LoadAccountByEmailRepository,
+    private readonly hashComparer: HashComparer,
+    private readonly encrypter: Encrypter,
+    private readonly updateAccessTokenRepository: UpdateAccessTokenRepository
+  ) {}
 
   // in case en error is return from a dependency, we don't want to use try and catch,
   // because we want the error to propagate so that the controller can capture it and
