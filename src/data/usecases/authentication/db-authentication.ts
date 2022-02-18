@@ -1,10 +1,10 @@
+import { LoadAccountByEmailRepository } from '@data/protocols/db/account/load-account-by-email-repository'
+import { UpdateAccessTokenRepository } from '@data/protocols/db/account/update-access-token-repository'
 import {
   Authentication,
   AuthenticationModel,
   HashComparer,
-  LoadAccountByEmailRepository,
   Encrypter,
-  UpdateAccessTokenRepository
 } from './db-authentication-protocols'
 
 export class DbAuthentication implements Authentication {
