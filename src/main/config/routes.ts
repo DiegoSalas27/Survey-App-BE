@@ -6,13 +6,18 @@ export default (app: Express): void => {
   const router = Router()
   app.use('/api', router)
 
-  const ext = process.env.NODE_ENV === 'production' ? 'js' : 'ts'
+  const ext = process.env.NODE_ENV === 'production' ? '**/main/routes/**routes.js' : '**/src/main/routes/**routes.ts'
+  const backPath = process.env.NODE_ENV === 'production' ? '../../' : '../../../'
 
-  fg.sync(`**/src/main/routes/**routes.${ext}`).map(async file => {
+  fg.sync(ext).map(async file => {
     // const route = (await import(`../../../${file}`)).default
     // route(router)
-    console.log('ROUTES', file);
-    (await import(`../../../${file}`)).default(router)
+
+    if (process.env.NODE_ENV) {
+      file = file.substring(file.indexOf('/') + 1)
+    }
+
+    ;(await import(`${backPath}${file}`)).default(router)
   })
 
   // readdirSync(`${__dirname}/../routes`).map(async file => {
