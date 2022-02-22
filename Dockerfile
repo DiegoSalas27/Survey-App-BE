@@ -13,4 +13,4 @@ COPY ./dist ./dist
 # make this accesible at 5000 port
 EXPOSE 5000
 
-CMD npm start
+CMD ["npm", "run", "start:prod"]
