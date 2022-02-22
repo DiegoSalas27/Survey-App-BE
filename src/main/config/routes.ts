@@ -13,7 +13,7 @@ export default (app: Express): void => {
     // const route = (await import(`../../../${file}`)).default
     // route(router)
 
-    if (process.env.NODE_ENV) {
+    if (process.env.NODE_ENV === 'production') {
       file = file.substring(file.indexOf('/') + 1)
     }
 
