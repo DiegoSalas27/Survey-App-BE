@@ -8,11 +8,12 @@ export default (app: Express): void => {
 
   const ext = process.env.NODE_ENV === 'production' ? 'js' : 'ts'
 
-  fg.sync(`**/src/main/routes/**routes.${ext}`).map(async file =>
+  fg.sync(`**/src/main/routes/**routes.${ext}`).map(async file => {
     // const route = (await import(`../../../${file}`)).default
     // route(router)
+    console.log('ROUTES', file);
     (await import(`../../../${file}`)).default(router)
-  )
+  })
 
   // readdirSync(`${__dirname}/../routes`).map(async file => {
   //   if (file.includes('.test.')) {
