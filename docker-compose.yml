@@ -1,0 +1,25 @@
+version: "3.8"
+services: #containers
+  mongo: # docker will give an internal ip for this container
+    container_name: mongo-container # will create a specific name for the container that's created
+    image: mongo:5.0.6
+    restart: always
+    volumes: 
+      - ./data:/data/db # wen running the docker compose, it will create a data folder and will persist data 
+    ports:
+      - "27017:27017"
+  api:
+    container_name: api-container
+    build: . #look for the docker file in current directory
+    image: clean-node-api
+    restart: always
+    # command: npm run start:prod
+    command: npm run debug # the program will open a port with web sockets and will allow debug code
+    volumes: #if we alter the contents of the dist in our project, that also will be altered in our container
+      - ./dist:/usr/src/clean-node-api/dist
+      - ./package.json:/usr/src/clean-node-api/package.json #make sure that any changes to our package json will be copied to our container
+    ports:
+      - "5050:5050" 
+      - "9222:9222"
+    links: 
+      - mongo
