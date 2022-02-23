@@ -8,6 +8,8 @@
     "start": "NODE_ENV=development ts-node --transpile-only -r tsconfig-paths/register src/main/server.ts",
     "start:dev": "sucrase-node src/main/server.ts",
     "build": "rimraf dist && NODE_ENV=production tsc --project tsconfig.json && tscpaths -p tsconfig.json -s ./src -o ./dist",
+    "up": "npm run build && docker-compose up -d",
+    "down": "docker-compose down",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:verbose": "jest --passWithNoTests --runInBand",
     "test:unit": "npm test -- --watch -c jest-unit.config.js",
