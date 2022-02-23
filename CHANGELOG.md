@@ -1,3 +1,12 @@
+# [1.11.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.10.0...v1.11.0) (2022-02-23)
+
+
+### Features
+
+* dockerized api and database ([c8e28e4](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/c8e28e4901e03f62f463a6e48ecbe1f801334c02))
+
+
+
 # [1.10.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.9.0...v1.10.0) (2022-02-18)
 
 
@@ -51,20 +60,6 @@
 * ensure LoginController returns 500 if EmailValidator throws ([2ea275c](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/2ea275c6b9c8c914ed5bb91d9282822eaa371855))
 * ensure SignUpController calls validation with correct value ([d209c2d](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/d209c2de1b487b2e9d778727b4bbb69ca1bbc0c0))
 * ensure SignUpController returns 400 if validation returns an error ([e443db9](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/e443db98f173efd690065ab6041770d0b9068994))
-
-
-
-# [1.6.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.5.0...v1.6.0) (2022-02-12)
-
-
-### Features
-
-* add LogMongoRepository to SignUpFactory ([a2d4b49](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/a2d4b49e4d3944e122b0a5b85b2f30ccbfd05db5))
-* add LogMongoRepository to SignUpFactory ([5878edf](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/5878edfd3643c5505ef56391359a93db16710a2d))
-* ensure LogControllerDecorator calls controller with correct value ([df6573c](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/df6573cb12adb0de2d0f5d5e150ac4e15625ed0f))
-* ensure login LogControllerDecorator call LogErrorRepository with correct error if controller returns a server error ([f87fbae](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/f87fbaea2b27986a78d2de1ba8b3cd767fbeacdc))
-* ensure LogMongoRepository creates an error log on success ([eac70cb](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/eac70cbb6651112ccf9352b5d5c3199b4402ebf2))
-* updated globalConfig ([b2a3b78](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/b2a3b78d8eca466911a15780d6b5aca9304f653e))
 
 
 
