@@ -16,7 +16,7 @@ services: #containers
     # command: npm run start:prod
     command: bash -c "npm install --only=prod && npm run debug" # the program will open a port with web sockets and will allow debug code
     volumes: #if we alter the contents of the dist in our project, that also will be altered in our container
-      - ./dist:/usr/src/clean-node-api/dist
+      - ./dist/:/usr/src/clean-node-api/dist/ # (/) just update files updated not te whole directory
       - ./package.json:/usr/src/clean-node-api/package.json #make sure that any changes to our package json will be copied to our container
     ports:
       - "5050:5050" 
