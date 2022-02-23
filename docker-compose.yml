@@ -15,7 +15,7 @@ services: #containers
     restart: always
     command: npm run start:prod
     volumes: #if we alter the contents of the dist in our project, that also will be altered in our container
-      - ./dist: /usr/src/clean-node-api/dist
+      - ./dist:/usr/src/clean-node-api/dist
     ports:
       - "5050:5050"
     links: 
