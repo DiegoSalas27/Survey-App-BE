@@ -13,10 +13,13 @@ services: #containers
     build: . #look for the docker file in current directory
     image: clean-node-api
     restart: always
-    command: npm run start:prod
+    # command: npm run start:prod
+    command: npm run debug # the program will open a port with web sockets and will allow debug code
     volumes: #if we alter the contents of the dist in our project, that also will be altered in our container
       - ./dist:/usr/src/clean-node-api/dist
+      - ./package.json:/usr/src/clean-node-api/package.json #make sure that any changes to our package json will be copied to our container
     ports:
-      - "5050:5050"
+      - "5050:5050" 
+      - "9222:9222"
     links: 
       - mongo
