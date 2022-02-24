@@ -13,7 +13,8 @@
       "@domain/*": ["src/domain/*"],
       "@data/*": ["src/data/*"],
       "@infrastructure/*": ["src/infrastructure/*"],
-      "@main/*": ["src/main/*"]
+      "@main/*": ["src/main/*"],
+      "@validation/*": ["src/validation/*"]
     },
     "strictNullChecks": false,
     "noUnusedLocals": true,
@@ -22,5 +23,5 @@
     "rootDir": "src"
   },
   "include": ["src"],
-  // "exclude": ["**/*.spec.ts", "**/*.test.ts"]
+  "exclude": ["**/*.spec.ts", "**/*.test.ts"]
 }
