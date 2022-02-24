@@ -1,6 +1,11 @@
 import { ServerError, UnauthorizedError } from '@presentation/errors';
 import { httpResponse } from '@presentation/protocols';
 
+export const forbidden = (error: Error): httpResponse => ({
+  statusCode: 403,
+  body: error,
+});
+
 export const badRequest = (error: Error): httpResponse => ({
   statusCode: 400,
   body: error,
