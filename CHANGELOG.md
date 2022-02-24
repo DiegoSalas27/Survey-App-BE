@@ -1,3 +1,19 @@
+# [1.13.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.12.0...v1.13.0) (2022-02-24)
+
+
+### Features
+
+* add AddSurvey composition ([5a76b2a](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/5a76b2a09334b1e2601a878402ab8ebbaef9d518))
+* ensure AddSurveyController calls AddSurveyUseCase with correct values ([5c72b85](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/5c72b85cbe61ed696d38a0c997d90d9105c3cacc))
+* ensure AddSurveyController calls Validation with correct values ([74c02f6](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/74c02f6379aa5bf165e24f9acbdaf31a2ab2f30a))
+* ensure AddSurveyController returns 204 on success ([e28fd8b](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/e28fd8b6aef32cd41a0dcf75cc43a59d13869ccd))
+* ensure AddSurveyController returns 500 if AddSurveyUseCase throws ([c1925cb](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/c1925cbe7f321a964c4256806237856738333070))
+* ensure AddSurveyController returns a badRequest error if validation fails ([e9cb0fe](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/e9cb0fed4136ff1f4b1ed641360baea5f2118ce6))
+* ensure DbAddSurvey calls DbAddSurveyRepository with correct values ([1adaa71](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/1adaa712afc2601a88e33a5d5e634511c50db8c8))
+* ensure ServerMongoRepository adds a survey on success ([11d970a](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/11d970a56be20c0d6e7dde2d1f4e25c8eba920ed))
+
+
+
 # [1.12.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.11.0...v1.12.0) (2022-02-24)
 
 
@@ -41,19 +57,6 @@
 * ensure BcryptAdapter returns false when compare fails ([09bbb16](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/09bbb162cf2c0ed4ef58557a008d97f9d3123e22))
 * ensure JWT Adapter calls sign with correct values ([643ec01](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/643ec01df733b00c0a32bfbd3c1c1b744bbc7095))
 * ensure JWT Adapter returns accessToken on sign success ([b87a709](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/b87a709372073a10a1ecb1934d6397380f721c37))
-
-
-
-# [1.8.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.7.0...v1.8.0) (2022-02-17)
-
-
-### Features
-
-* ensure DbAuthentication calls HashComparer with correct values ([46bf7aa](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/46bf7aa70278b86d74126ccd9e0faf279843146a))
-* ensure DbAuthentication calls LoadAccountByEmailRepository with correct email ([31bf158](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/31bf1581994f51d3e9323611bfe1060be214949a))
-* ensure DbAuthentication calls TokenGenerator with correct id ([3300957](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/330095702087fa456e5b595f77b1299dfa0be1e5))
-* ensure DbAuthentication calls UpdateAccessTokenRepository with correct values ([bff2fa5](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/bff2fa57f0b3a2227618fbd04f2c54052fc11acc))
-* ensure DbAuthentication returns a token on success ([4823b34](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/4823b34d054e333306a149b886d6d154b0112b29))
 
 
 
