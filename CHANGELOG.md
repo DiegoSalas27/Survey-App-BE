@@ -1,3 +1,16 @@
+# [1.12.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.11.0...v1.12.0) (2022-02-24)
+
+
+### Features
+
+* ensure DbAddAccount calls LoadAccountByEmailRepository with correct email ([dc1e1d9](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/dc1e1d9a1e049784707c22df98b15e3b2f30fa0b))
+* ensure DbAddAccount returns null if LoadAccountByEmailRepository returns an account ([976d4e0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/976d4e0cce97ad068c71e8642b5a90c55fc57c5f))
+* ensure SignUpController calls Authentication with correct values ([c163f93](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/c163f930570efe0e9249ce30b5a8bd8a162c441f))
+* ensure SignUpController returns 403 if AddAccount returns null ([de81ee4](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/de81ee4cf474d512708b14d26cafbd93fdba4e94))
+* ensure SignUpController returns an accessToken on success ([87d2b60](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/87d2b601b97c4490b2548b11bf56927273d1b245))
+
+
+
 # [1.11.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.10.0...v1.11.0) (2022-02-23)
 
 
@@ -41,25 +54,6 @@
 * ensure DbAuthentication calls TokenGenerator with correct id ([3300957](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/330095702087fa456e5b595f77b1299dfa0be1e5))
 * ensure DbAuthentication calls UpdateAccessTokenRepository with correct values ([bff2fa5](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/bff2fa57f0b3a2227618fbd04f2c54052fc11acc))
 * ensure DbAuthentication returns a token on success ([4823b34](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/4823b34d054e333306a149b886d6d154b0112b29))
-
-
-
-# [1.7.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.6.0...v1.7.0) (2022-02-13)
-
-
-### Features
-
-* add LoginValidationFactory ([683a939](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/683a93941a0286e2566631906348bbb141bbb262))
-* ensure LoginController calls Authentication with correct values ([b193246](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/b1932468aec7990036a794bdc17c254b92ea9f27))
-* ensure LoginController calls EmailValidator with correct email ([e504318](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/e5043189cfb7bfd814d6dfb0c1d5e3a27cc37784))
-* ensure LoginController return 401 if invalid credentials are provided ([a9cdede](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/a9cdedecf9005fbdf552039ea3bf8f6dcc2238d9))
-* ensure LoginController returns 200 if valid credentials are provided ([ba7598e](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/ba7598ef28a80db28f646beff596c10584f8eb3c))
-* ensure LoginController returns 400 if an invalid email is provided ([29d5a94](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/29d5a941a43c634a5b3d2b78e09d0627afbaf922))
-* ensure LoginController returns 400 if no email is provided ([b5ef1c4](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/b5ef1c45dc46180ad7f6fe77c4d907034c74becc))
-* ensure LoginController returns 400 if no password is provided ([414f682](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/414f682acbbd97ac9862a17b62ad654b10129ca3))
-* ensure LoginController returns 500 if EmailValidator throws ([2ea275c](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/2ea275c6b9c8c914ed5bb91d9282822eaa371855))
-* ensure SignUpController calls validation with correct value ([d209c2d](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/d209c2de1b487b2e9d778727b4bbb69ca1bbc0c0))
-* ensure SignUpController returns 400 if validation returns an error ([e443db9](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/e443db98f173efd690065ab6041770d0b9068994))
 
 
 
