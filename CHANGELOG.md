@@ -1,3 +1,29 @@
+# [1.14.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.13.0...v1.14.0) (2022-02-25)
+
+
+### Bug Fixes
+
+* ensure AccountMongoRepository allows admin to access any route ([e32f1c8](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/e32f1c87d1cbd92d472be9f29f20bb19ba6182e2))
+
+
+### Features
+
+* add middleware interface ([00df1b0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/00df1b0a31f22521d140d7591987adfd8fb3e507))
+* ensure AccountMongoRepository returns an account by token without role ([2058045](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/2058045b9cc38865fd6c33e09c99e2f6eb0d56ae))
+* ensure add survey routes returns 403 if no access token is provided ([d741c4e](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/d741c4ecb75ba3b03c0c2a606ce24c700bca5b15))
+* ensure AuthMiddleware calls LoadAccountByToen with correct accessToken ([3e34226](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/3e3422603636a230704d65cc09c7466a05f37a91))
+* ensure AuthMiddleware calls LoadAccountByToken with correct role ([b1edaa2](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/b1edaa2ce33a193902bca020f25d0902fb941278))
+* ensure AuthMiddleware returns 200 if LoadAccountByToken returns an account ([5f5a708](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/5f5a708297814af3c94cf66b62bc870be8c93e4f))
+* ensure AuthMiddleware returns 403 if no headers found ([6195d8e](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/6195d8e094f539f8404f280bbeb01f4f2ad85a37))
+* ensure AuthMiddleware returns 500 if LoadAccountBYToken throws ([51817fe](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/51817fefbb4b310b0befefdc909418d3cf68f5b8))
+* ensure DbLoadAccountByToken calls Decrypter with correct values ([8bd09ca](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/8bd09cadace759257ed6a1e56bb23aab295fc089))
+* ensure DbLoadAccountByToken calls LoadAccountByTokenRepository with correct values ([7e035c0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/7e035c0caaf1b76df821daec1c658f6a58f971dd))
+* ensure DbLoadAccountByToken returns an account on success ([21834a9](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/21834a9678340ec2a2160d013b357541098c8d51))
+* ensure JwtAdapter calls verify with correct values ([bc5048c](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/bc5048ce6f5ffce656c2076a994cff27e438ab16))
+* ensure JwtAdapter returns a decrypted value on verify success ([6589b72](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/6589b72c7b426a26b22ebe6557b5b55f3ea89d29))
+
+
+
 # [1.13.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.12.0...v1.13.0) (2022-02-24)
 
 
@@ -43,20 +69,6 @@
 
 * add login route ([037bf36](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/037bf36d4f5220c105d636759c7a3e6a702b5ab0))
 * add LoginFactory ([a4dd1e5](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/a4dd1e57586f9d3bfdfe79e03b70e1199e68fe7d))
-
-
-
-# [1.9.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.8.0...v1.9.0) (2022-02-18)
-
-
-### Features
-
-* ensure Account Mongo Repository returns an account on loadByEmail success ([c19d499](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/c19d49984befa99fd91e9cec836b0e2cac79b7a9))
-* ensure AccountMongoRepository updates the account accessToken on updateAccessToken success ([bb7d94f](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/bb7d94f4c9d5bd03812564bcc44cc726de9fbc94))
-* ensure BcryptAdapter calls bcrypt compare with correct values ([6fe988b](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/6fe988b47e164eacd99c9f53f0e692aef5337d25))
-* ensure BcryptAdapter returns false when compare fails ([09bbb16](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/09bbb162cf2c0ed4ef58557a008d97f9d3123e22))
-* ensure JWT Adapter calls sign with correct values ([643ec01](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/643ec01df733b00c0a32bfbd3c1c1b744bbc7095))
-* ensure JWT Adapter returns accessToken on sign success ([b87a709](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/b87a709372073a10a1ecb1934d6397380f721c37))
 
 
 
