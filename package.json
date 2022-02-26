@@ -17,6 +17,7 @@
     "test:integration": "npm test -- --watch -c jest-integration.config.js",
     "test:staged": "npm test --findRelatedTests",
     "test:ci": "npm test -- --coverage",
+    "test:coveralls": "npm run test:ci && coveralls < coverage/lcov.info",
     "prepare": "husky install"
   },
   "repository": {
@@ -44,6 +45,7 @@
     "husky": "^7.0.0",
     "jest": "^27.4.7",
     "lint-staged": "^12.1.7",
+    "mockdate": "^3.0.5",
     "prettier": "2.5.1",
     "rimraf": "^3.0.2",
     "sucrase": "^3.20.3",
