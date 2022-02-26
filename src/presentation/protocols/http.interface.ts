@@ -1,9 +1,9 @@
-export interface httpResponse {
+export type httpResponse = {
     statusCode: number
     body: any
 }
 
-export interface HttpRequest {
+export type HttpRequest = {
     body?: any
     headers?: any
 }
