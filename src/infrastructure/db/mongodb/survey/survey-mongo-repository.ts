@@ -10,6 +10,8 @@ export class SurveyMongoRepository implements AddSurveyRepository, LoadSurveysRe
   }
 
   async loadAll(): Promise<SurveyModel[]> {
-    throw new Error('Method not implemented.')
+    const surveyCollection = MongoHelper.getCollection('surveys')
+    const surveys = await surveyCollection.find().toArray()
+    return surveys as any
   }
 }
