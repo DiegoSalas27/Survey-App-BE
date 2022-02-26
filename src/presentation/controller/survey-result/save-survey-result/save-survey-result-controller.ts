@@ -1,6 +1,13 @@
 import {
-  Controller, forbidden, HttpRequest,
-  httpResponse, InvalidParamError, LoadSurveyById, ok, SaveSurveyResult, serverError
+  Controller,
+  forbidden,
+  HttpRequest,
+  httpResponse,
+  InvalidParamError,
+  LoadSurveyById,
+  ok,
+  SaveSurveyResult,
+  serverError
 } from './save-survey-result-controller-protocols'
 
 export class SaveSurveyResultController implements Controller {
@@ -8,6 +15,7 @@ export class SaveSurveyResultController implements Controller {
 
   async handle(httpRequest: HttpRequest): Promise<httpResponse> {
     try {
+      console.log('Hello bitch')
       const { surveyId } = httpRequest.params
       const { answer } = httpRequest.body
       const { accountId } = httpRequest
