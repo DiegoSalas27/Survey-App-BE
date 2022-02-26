@@ -1,13 +1,6 @@
 import {
-  Controller,
-  LoadSurveyById,
-  SaveSurveyResult,
-  HttpRequest,
-  httpResponse,
-  forbidden,
-  InvalidParamError,
-  ok,
-  serverError
+  Controller, forbidden, HttpRequest,
+  httpResponse, InvalidParamError, LoadSurveyById, ok, SaveSurveyResult, serverError
 } from './save-survey-result-controller-protocols'
 
 export class SaveSurveyResultController implements Controller {
