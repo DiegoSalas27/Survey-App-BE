@@ -1,7 +1,7 @@
 import MockDate from 'mockdate'
 import { SurveyModel } from '@domain/models/survey'
 import { LoadSurveyById } from '@domain/usecases/survey/load-survey-by-id'
-import { forbidden, InvalidParamError, serverError } from '@presentation/middlewares/auth-middleware-protocols'
+import { forbidden, InvalidParamError, ok, serverError } from '@presentation/middlewares/auth-middleware-protocols'
 import { SaveSurveyResultController } from './save-survey-result-controller'
 import { HttpRequest } from './save-survey-result-controller-protocols'
 import { SaveSurveyResult, SaveSurveyResultModel } from '@domain/usecases/survey-result/save-survey-result'
@@ -139,5 +139,11 @@ describe('SaveSurveyResult Controller', () => {
       .mockReturnValueOnce(new Promise((resolve, reject) => reject(new Error())))
     const httpResponse = await sut.handle(makeFakeRequest())
     expect(httpResponse).toEqual(serverError(new Error()))
+  })
+
+  test('Should return 200 if on success', async () => {
+    const { sut } = makeSut()
+    const httpResponse = await sut.handle(makeFakeRequest())
+    expect(httpResponse).toEqual(ok(makeFakeSurveyResult()))
   })
 })
