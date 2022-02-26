@@ -9,6 +9,28 @@ import env from '@main/config/env'
 let surveyCollection: Collection
 let accountCollection: Collection
 
+const makeAccessToken = async (): Promise<string> => {
+  const res = await accountCollection.insertOne({
+    name: 'Rodrigo',
+    email: 'rodrigo.maguino@gmail.com',
+    password: '123',
+    role: 'admin'
+  })
+  const id = res.insertedId
+
+  const accessToken = sign(id.toString(), env.jwtSecret)
+
+  await accountCollection.updateOne(
+    { _id: id },
+    {
+      $set: {
+        accessToken
+      }
+    }
+  )
+
+  return accessToken
+}
 describe('Surver Routes', () => {
   beforeAll(async () => {
     await MongoHelper.connect(process.env.MONGO_URL)
@@ -43,24 +65,7 @@ describe('Surver Routes', () => {
     })
 
     test('Should return 204 on add survey with valid accessToken', async () => {
-      const res = await accountCollection.insertOne({
-        name: 'Rodrigo',
-        email: 'rodrigo.maguino@gmail.com',
-        password: '123',
-        role: 'admin'
-      })
-      const id = res.insertedId
-
-      const accessToken = sign(id.toString(), env.jwtSecret)
-
-      await accountCollection.updateOne(
-        { _id: id },
-        {
-          $set: {
-            accessToken
-          }
-        }
-      )
+      const accessToken = await makeAccessToken()
 
       await request(app)
         .post('/api/surveys')
@@ -87,23 +92,7 @@ describe('Surver Routes', () => {
     })
 
     test('Should return 200 on load surveys with valid accessToken', async () => {
-      const res = await accountCollection.insertOne({
-        name: 'Rodrigo',
-        email: 'rodrigo.maguino@gmail.com',
-        password: '123'
-      })
-      const id = res.insertedId
-
-      const accessToken = sign(id.toString(), env.jwtSecret)
-
-      await accountCollection.updateOne(
-        { _id: id },
-        {
-          $set: {
-            accessToken
-          }
-        }
-      )
+      const accessToken = await makeAccessToken()
 
       await surveyCollection.insertMany([
         {
@@ -134,35 +123,13 @@ describe('Surver Routes', () => {
         }
       ])
 
-      await request(app)
-        .get('/api/surveys')
-        .set('x-access-token', accessToken)
-        .expect(200)
+      await request(app).get('/api/surveys').set('x-access-token', accessToken).expect(200)
     })
 
     test('Should return 204 on load surveys with valid accessToken', async () => {
-      const res = await accountCollection.insertOne({
-        name: 'Rodrigo',
-        email: 'rodrigo.maguino@gmail.com',
-        password: '123'
-      })
-      const id = res.insertedId
+      const accessToken = await makeAccessToken()
 
-      const accessToken = sign(id.toString(), env.jwtSecret)
-
-      await accountCollection.updateOne(
-        { _id: id },
-        {
-          $set: {
-            accessToken
-          }
-        }
-      )
-
-      await request(app)
-        .get('/api/surveys')
-        .set('x-access-token', accessToken)
-        .expect(204)
+      await request(app).get('/api/surveys').set('x-access-token', accessToken).expect(204)
     })
   })
 })
