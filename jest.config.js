@@ -22,6 +22,7 @@ module.exports = {
     '@domain/(.*)$': resolve(__dirname, './src/domain/$1'),
     '@main/(.*)$': resolve(__dirname, './src/main/$1'),
     '@validation/(.*)$': resolve(__dirname, './src/validation/$1')
+    // '@/(.*)': '<rootDir>/src/$1'
   },
   preset: '@shelf/jest-mongodb',
   transform: {
