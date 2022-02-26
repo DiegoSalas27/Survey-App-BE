@@ -31,6 +31,7 @@ const makeAccessToken = async (): Promise<string> => {
 
   return accessToken
 }
+
 describe('Surver Routes', () => {
   beforeAll(async () => {
     await MongoHelper.connect(process.env.MONGO_URL)
