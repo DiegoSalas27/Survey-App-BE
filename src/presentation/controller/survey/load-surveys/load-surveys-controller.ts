@@ -1,4 +1,4 @@
-import { ok, serverError } from '@presentation/middlewares/auth-middleware-protocols'
+import { noContent, ok, serverError } from '@presentation/middlewares/auth-middleware-protocols'
 import { Controller, HttpRequest, httpResponse, LoadSurveys } from './load-surveys-controller-protocols'
 
 export class LoadSurveysController implements Controller {
@@ -7,7 +7,7 @@ export class LoadSurveysController implements Controller {
   async handle(httpRequest: HttpRequest): Promise<httpResponse> {
     try {
       const surveys = await this.loadSurveys.load()
-      return ok(surveys)
+      return surveys.length ? ok(surveys) : noContent()
     } catch (error: any) {
       return serverError(error)
     }
