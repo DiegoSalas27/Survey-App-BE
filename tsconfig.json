@@ -7,14 +7,14 @@
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": {
-      "@presentation/*": ["src/presentation/*"],
-      "@domain/*": ["src/domain/*"],
-      "@data/*": ["src/data/*"],
-      "@infrastructure/*": ["src/infrastructure/*"],
-      "@main/*": ["src/main/*"],
-      "@validation/*": ["src/validation/*"]
+      "@presentation/*": ["presentation/*"],
+      "@domain/*": ["domain/*"],
+      "@data/*": ["data/*"],
+      "@infrastructure/*": ["infrastructure/*"],
+      "@main/*": ["main/*"],
+      "@validation/*": ["validation/*"]
     },
     "strictNullChecks": false,
     "noUnusedLocals": true,
@@ -23,5 +23,5 @@
     "rootDir": "src"
   },
   "include": ["src"],
-  "exclude": ["**/*.spec.ts", "**/*.test.ts"]
+  "exclude": []
 }
