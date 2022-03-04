@@ -1,3 +1,14 @@
+# [1.17.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.16.0...v1.17.0) (2022-03-04)
+
+
+### Features
+
+* add no cache middleware ([e13c435](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/e13c435472a53a1deaff560f9fedbf915be132a2))
+* add swagger api ([e6d3f2c](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/e6d3f2cd5cc54b981ef0ebf0b093a903b5a7051d))
+* apply no-cache middleware on swagger api ([8b9c3fa](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/8b9c3faafae38cbed8f44d685d8c1e70ff1cb281))
+
+
+
 # [1.16.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.15.0...v1.16.0) (2022-02-27)
 
 
@@ -88,19 +99,6 @@
 * ensure AddSurveyController returns a badRequest error if validation fails ([e9cb0fe](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/e9cb0fed4136ff1f4b1ed641360baea5f2118ce6))
 * ensure DbAddSurvey calls DbAddSurveyRepository with correct values ([1adaa71](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/1adaa712afc2601a88e33a5d5e634511c50db8c8))
 * ensure ServerMongoRepository adds a survey on success ([11d970a](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/11d970a56be20c0d6e7dde2d1f4e25c8eba920ed))
-
-
-
-# [1.12.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.11.0...v1.12.0) (2022-02-24)
-
-
-### Features
-
-* ensure DbAddAccount calls LoadAccountByEmailRepository with correct email ([dc1e1d9](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/dc1e1d9a1e049784707c22df98b15e3b2f30fa0b))
-* ensure DbAddAccount returns null if LoadAccountByEmailRepository returns an account ([976d4e0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/976d4e0cce97ad068c71e8642b5a90c55fc57c5f))
-* ensure SignUpController calls Authentication with correct values ([c163f93](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/c163f930570efe0e9249ce30b5a8bd8a162c441f))
-* ensure SignUpController returns 403 if AddAccount returns null ([de81ee4](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/de81ee4cf474d512708b14d26cafbd93fdba4e94))
-* ensure SignUpController returns an accessToken on success ([87d2b60](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/87d2b601b97c4490b2548b11bf56927273d1b245))
 
 
 
