@@ -1,13 +1,13 @@
-import { AddAccountModel } from '@domain/usecases/account/add-account'
-import { AddSurveyModel } from '@domain/usecases/survey/add-survey'
-import { SaveSurveyResultModel } from '@domain/usecases/survey-result/save-survey-result'
+import { AddAccountParams } from '@domain/usecases/account/add-account'
+import { AddSurveyParams } from '@domain/usecases/survey/add-survey'
+import { SaveSurveyResultParams } from '@domain/usecases/survey-result/save-survey-result'
 import { Collection, ObjectId } from 'mongodb'
 import { MongoHelper } from '../helpers/mongo-helper'
 import { SurveyResultMongoRepository } from './survey-result-mongo-repository'
 
-let surveyCollection: Collection<AddSurveyModel>
-let surveyResultCollection: Collection<SaveSurveyResultModel>
-let accountCollection: Collection<AddAccountModel>
+let surveyCollection: Collection<AddSurveyParams>
+let surveyResultCollection: Collection<SaveSurveyResultParams>
+let accountCollection: Collection<AddAccountParams>
 
 const makeSut = (): SurveyResultMongoRepository => {
   return new SurveyResultMongoRepository()
@@ -50,11 +50,11 @@ describe('Survey Result Mongo Repository', () => {
     await MongoHelper.disconnect()
   })
   beforeEach(async () => {
-    surveyCollection = MongoHelper.getCollection<AddSurveyModel>('surveys')
+    surveyCollection = MongoHelper.getCollection<AddSurveyParams>('surveys')
     await surveyCollection.deleteMany({}) // delete objects in memory so that tests don't overlap
-    surveyResultCollection = MongoHelper.getCollection<SaveSurveyResultModel>('surveysResults')
+    surveyResultCollection = MongoHelper.getCollection<SaveSurveyResultParams>('surveysResults')
     await surveyResultCollection.deleteMany({}) // delete objects in memory so that tests don't overlap
-    accountCollection = MongoHelper.getCollection<AddAccountModel>('accounts')
+    accountCollection = MongoHelper.getCollection<AddAccountParams>('accounts')
     await accountCollection.deleteMany({}) // delete objects in memory so that tests don't overlap
   })
 

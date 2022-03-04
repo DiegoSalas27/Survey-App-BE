@@ -3,25 +3,24 @@
  * https://jestjs.io/docs/configuration
  */
 
-const { resolve } = require('path')
-
 module.exports = {
   roots: ['<rootDir>/src'],
   collectCoverageFrom: [
     '<rootDir>/src/**/*.ts',
     '!<rootDir>/src/main/**',
     '!<rootDir>/src/**/**protocols.ts',
-    '!<rootDir>/src/**/**index.ts'
+    '!<rootDir>/src/**/**index.ts',
+    '!**/test/**'
   ],
   coverageDirectory: 'coverage',
   testEnvironment: 'node',
   moduleNameMapper: {
-    '@presentation/(.*)$': resolve(__dirname, './src/presentation/$1'),
-    '@infrastructure/(.*)$': resolve(__dirname, './src/infrastructure/$1'),
-    '@data/(.*)$': resolve(__dirname, './src/data/$1'),
-    '@domain/(.*)$': resolve(__dirname, './src/domain/$1'),
-    '@main/(.*)$': resolve(__dirname, './src/main/$1'),
-    '@validation/(.*)$': resolve(__dirname, './src/validation/$1')
+    '@presentation/(.*)$': '<rootDir>/src/presentation/$1',
+    '@infrastructure/(.*)$': '<rootDir>/src/infrastructure/$1',
+    '@data/(.*)$': '<rootDir>/src/data/$1',
+    '@domain/(.*)$': '<rootDir>/src/domain/$1',
+    '@main/(.*)$': '<rootDir>/src/main/$1',
+    '@validation/(.*)$': '<rootDir>/src/validation/$1'
     // '@/(.*)': '<rootDir>/src/$1'
   },
   preset: '@shelf/jest-mongodb',
