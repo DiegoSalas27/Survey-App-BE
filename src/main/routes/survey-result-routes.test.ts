@@ -1,4 +1,4 @@
-import { AddSurveyModel } from '@domain/usecases/survey/add-survey'
+import { AddSurveyParams } from '@domain/usecases/survey/add-survey'
 import { MongoHelper } from '@infrastructure/db/mongodb/helpers/mongo-helper'
 import env from '@main/config/env'
 import { sign } from 'jsonwebtoken'
@@ -6,7 +6,7 @@ import { Collection } from 'mongodb'
 import request from 'supertest'
 import app from '../config/app'
 
-let surveyCollection: Collection<AddSurveyModel>
+let surveyCollection: Collection<AddSurveyParams>
 let accountCollection: Collection
 
 const makeAccessToken = async (): Promise<string> => {
