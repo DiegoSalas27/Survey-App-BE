@@ -1,3 +1,28 @@
+# [1.18.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.17.0...v1.18.0) (2022-03-05)
+
+
+### Bug Fixes
+
+* change save survey result to return all answers ([1ca1c4f](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/1ca1c4f23b340748800af9661d8d8b27b038d443))
+
+
+### Features
+
+* add LoadSurveyResult use case ([541a7e6](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/541a7e6015420953b449152843884522a2af1538))
+* ensure DbLoadSurveyResult calls LoadSurveyByIdRepository if LoadSurveyResultRepository returns null ([3020f0e](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/3020f0e74a231192083a50784d23e75bf37fd328))
+* ensure DbLoadSurveyResult calls LoadSurveyResultRepository with correct values ([b815f6a](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/b815f6a2693f600dea74024248d60a8a7b9c6358))
+* ensure DbLoadSurveyResult returns a SurveyResultModel call with all answers with count 0 if LoadSurveyResultRepository returns null ([a93314d](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/a93314d42972ffe3a4f997b064711652d8b80b1c))
+* ensure DbLoadSurveyResult returns a SurveyResultModel on success ([4c36229](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/4c36229725c909a46d437a246f4dd3e8796434d2))
+* ensure LoadSurveyResult calls LoadSurveyById wtih correct value ([e74a0bc](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/e74a0bc9dbbd9c58674dfaa82bcb38d293010c87))
+* ensure LoadSurveyResultController calls LoadSurveyResult with correct value ([a7286a5](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/a7286a5d463c088e89e3e03bab8dcd10d20bd343))
+* ensure LoadSurveyResultController returns 200 on success ([d3ec37a](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/d3ec37ae578410b0a9798aeee01e1a7260948c22))
+* ensure LoadSurveyResultController returns 403 if LoadSurveyById returns null ([1b3ce68](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/1b3ce68afdc5e110d5ea77666cff22d5ff5a93cf))
+* ensure LoadSurveyResultController returns 500 if LoadSurveyById throws ([e5490e0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/e5490e08d4628c81038da69a8490d61c2e154580))
+* ensure SurverResultRoutes returns 403 on load survey result without accessToken ([70e57a7](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/70e57a75724e1316ba36228f57191f5c5b1b0c11))
+* ensure SurveyResultMongoRepository loads surveyResults correctly ([9aa88f1](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/9aa88f149d1e26e3f705a308ca7739f28bc542cd))
+
+
+
 # [1.17.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.16.0...v1.17.0) (2022-03-04)
 
 
@@ -83,22 +108,6 @@
 * ensure DbLoadAccountByToken returns an account on success ([21834a9](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/21834a9678340ec2a2160d013b357541098c8d51))
 * ensure JwtAdapter calls verify with correct values ([bc5048c](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/bc5048ce6f5ffce656c2076a994cff27e438ab16))
 * ensure JwtAdapter returns a decrypted value on verify success ([6589b72](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/6589b72c7b426a26b22ebe6557b5b55f3ea89d29))
-
-
-
-# [1.13.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.12.0...v1.13.0) (2022-02-24)
-
-
-### Features
-
-* add AddSurvey composition ([5a76b2a](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/5a76b2a09334b1e2601a878402ab8ebbaef9d518))
-* ensure AddSurveyController calls AddSurveyUseCase with correct values ([5c72b85](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/5c72b85cbe61ed696d38a0c997d90d9105c3cacc))
-* ensure AddSurveyController calls Validation with correct values ([74c02f6](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/74c02f6379aa5bf165e24f9acbdaf31a2ab2f30a))
-* ensure AddSurveyController returns 204 on success ([e28fd8b](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/e28fd8b6aef32cd41a0dcf75cc43a59d13869ccd))
-* ensure AddSurveyController returns 500 if AddSurveyUseCase throws ([c1925cb](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/c1925cbe7f321a964c4256806237856738333070))
-* ensure AddSurveyController returns a badRequest error if validation fails ([e9cb0fe](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/e9cb0fed4136ff1f4b1ed641360baea5f2118ce6))
-* ensure DbAddSurvey calls DbAddSurveyRepository with correct values ([1adaa71](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/1adaa712afc2601a88e33a5d5e634511c50db8c8))
-* ensure ServerMongoRepository adds a survey on success ([11d970a](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/11d970a56be20c0d6e7dde2d1f4e25c8eba920ed))
 
 
 
