@@ -1,5 +1,5 @@
 import { mockLoadSurveyResultRepository, mockSaveSurveyResultRepository } from '@data/test/mock-db-survey-result'
-import { LoadSurveyResultRepository } from '@data/usecases/load-survey-result/db-load-survey-result-protocols'
+import { LoadSurveyResultRepository } from '@data/usecases/survey-result/load-survey-result/db-load-survey-result-protocols'
 import { mockSaveSurveyResultParams, mockSurveyResultModel, throwError } from '@domain/test'
 import MockDate from 'mockdate'
 import { DbSaveSurveyResult } from './db-save-survey-result'
