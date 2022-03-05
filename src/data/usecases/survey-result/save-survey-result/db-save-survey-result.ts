@@ -1,4 +1,4 @@
-import { LoadSurveyResultRepository } from '@data/usecases/load-survey-result/db-load-survey-result-protocols'
+import { LoadSurveyResultRepository } from '@data/usecases/survey-result/load-survey-result/db-load-survey-result-protocols'
 import {
   SaveSurveyResult,
   SaveSurveyResultRepository,
