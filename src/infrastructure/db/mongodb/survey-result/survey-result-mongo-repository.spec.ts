@@ -1,10 +1,10 @@
+import { SurveyModel } from '@domain/models/survey'
 import { AddAccountParams } from '@domain/usecases/account/add-account'
-import { AddSurveyParams } from '@domain/usecases/survey/add-survey'
 import { SaveSurveyResultParams } from '@domain/usecases/survey-result/save-survey-result'
+import { AddSurveyParams } from '@domain/usecases/survey/add-survey'
 import { Collection, ObjectId } from 'mongodb'
 import { MongoHelper } from '../helpers/mongo-helper'
 import { SurveyResultMongoRepository } from './survey-result-mongo-repository'
-import { SurveyModel } from '@domain/models/survey'
 
 let surveyCollection: Collection<AddSurveyParams>
 let surveyResultCollection: Collection<SaveSurveyResultParams>
@@ -85,7 +85,7 @@ describe('Survey Result Mongo Repository', () => {
       })
       const surveyResult = await surveyResultCollection.findOne({
         surveyId: survey.id,
-        accountId: accountId,
+        accountId: accountId
       })
       expect(surveyResult).toBeTruthy()
       expect(surveyResult.surveyId).toEqual(survey.id)
@@ -108,10 +108,12 @@ describe('Survey Result Mongo Repository', () => {
         answer: survey.answers[1].answer,
         date: new Date()
       })
-      const surveyResult = await surveyResultCollection.find({
-        surveyId: survey.id,
-        accountId: accountId,
-      }).toArray()
+      const surveyResult = await surveyResultCollection
+        .find({
+          surveyId: survey.id,
+          accountId: accountId
+        })
+        .toArray()
       expect(surveyResult).toBeTruthy()
       expect(surveyResult.length).toBe(1)
     })
@@ -164,6 +166,13 @@ describe('Survey Result Mongo Repository', () => {
       expect(surveyResult.answers[1].percent).toBe(40)
       expect(surveyResult.answers[2].count).toBe(0)
       expect(surveyResult.answers[2].percent).toBe(0)
+    })
+
+    test('Should return null if there is no survey result', async () => {
+      const survey = await makeSurvey()
+      const sut = makeSut()
+      const surveyResult = await sut.loadBySurveyId(survey.id)
+      expect(surveyResult).toBeNull()
     })
   })
 })
