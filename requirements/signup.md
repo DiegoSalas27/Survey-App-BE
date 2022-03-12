@@ -3,8 +3,8 @@
 > ## Success case
 
 1. ✅ Receives a request of type **POST** on route **/api/signup**
-2. ✅ validates the required **name**, **email**, **password** and **passwordConfirmation** data
-3. ✅ Validates that **password** and **passwordConfirmation** are equal
+2. ✅ validates the required **name**, **email**, **password** and **passwordConfirm** data
+3. ✅ Validates that **password** and **passwordConfirm** are equal
 4. ✅ Validates that the **email** field is a valid email address
 5. ✅ **Validates** if a user with the provided email already exists
 6. ✅ Generates an **encrypted** password (this password cannot be decrypted)
@@ -16,8 +16,8 @@
 > ## Exceptions
 
 1. ✅ returns error **404** if the API does not exist
-2. ✅ Returns error **400** if name, email, password or passwordConfirmation are not provided by the client
-3. ✅ returns error **400** if password and passwordConfirmation are not equal
+2. ✅ Returns error **400** if name, email, password or passwordConfirm are not provided by the client
+3. ✅ returns error **400** if password and passwordConfirm are not equal
 4. ✅ Returns error **400** if the email field is an invalid email address
 5. ✅ Returns error **403** if the email address is already in use
 6. ✅ Returns error **500** if an error occurs when trying to generate an encrypted password

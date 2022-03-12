@@ -10,7 +10,7 @@ const mockRequest = (): HttpRequest => ({
     name: 'any_name',
     email: 'any_email@gmail.com',
     password: 'any_password',
-    passwordConfirmation: 'any_password'
+    passwordConfirm: 'any_password'
   }
 })
 
