@@ -1,3 +1,13 @@
+## [1.18.1](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.18.0...v1.18.1) (2022-03-12)
+
+
+### Bug Fixes
+
+* changed validation passwordConfirmation to passwordConfirm ([f20a2aa](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/f20a2aad8820622e920bc243776118b12c6b2f72))
+* changed validation passwordConfirmation to passwordConfirm ([d2eb06f](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/d2eb06f7d5ec0443d4b10ba3b37865dcdac764a9))
+
+
+
 # [1.18.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.17.0...v1.18.0) (2022-03-05)
 
 
@@ -82,32 +92,6 @@
 * ensure LoadSurveysController returns 204 if LoadSurveysUseCase returns empty array ([8f4719e](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/8f4719e4a34b0ae631c14f6bbfa6c3aacae215e3))
 * ensure LoadSurveysController returns 500 if LoadSurveysUseCase throws ([ec0e8ca](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/ec0e8ca1c9a1e88d7e0a35100a0bc8bd9d5866e2))
 * ensure SurveyMongoRepository load all surveys on success ([403f8e6](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/403f8e61d88de950407a0676245b3cd43df35afc))
-
-
-
-# [1.14.0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/compare/v1.13.0...v1.14.0) (2022-02-25)
-
-
-### Bug Fixes
-
-* ensure AccountMongoRepository allows admin to access any route ([e32f1c8](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/e32f1c87d1cbd92d472be9f29f20bb19ba6182e2))
-
-
-### Features
-
-* add middleware interface ([00df1b0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/00df1b0a31f22521d140d7591987adfd8fb3e507))
-* ensure AccountMongoRepository returns an account by token without role ([2058045](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/2058045b9cc38865fd6c33e09c99e2f6eb0d56ae))
-* ensure add survey routes returns 403 if no access token is provided ([d741c4e](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/d741c4ecb75ba3b03c0c2a606ce24c700bca5b15))
-* ensure AuthMiddleware calls LoadAccountByToen with correct accessToken ([3e34226](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/3e3422603636a230704d65cc09c7466a05f37a91))
-* ensure AuthMiddleware calls LoadAccountByToken with correct role ([b1edaa2](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/b1edaa2ce33a193902bca020f25d0902fb941278))
-* ensure AuthMiddleware returns 200 if LoadAccountByToken returns an account ([5f5a708](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/5f5a708297814af3c94cf66b62bc870be8c93e4f))
-* ensure AuthMiddleware returns 403 if no headers found ([6195d8e](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/6195d8e094f539f8404f280bbeb01f4f2ad85a37))
-* ensure AuthMiddleware returns 500 if LoadAccountBYToken throws ([51817fe](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/51817fefbb4b310b0befefdc909418d3cf68f5b8))
-* ensure DbLoadAccountByToken calls Decrypter with correct values ([8bd09ca](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/8bd09cadace759257ed6a1e56bb23aab295fc089))
-* ensure DbLoadAccountByToken calls LoadAccountByTokenRepository with correct values ([7e035c0](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/7e035c0caaf1b76df821daec1c658f6a58f971dd))
-* ensure DbLoadAccountByToken returns an account on success ([21834a9](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/21834a9678340ec2a2160d013b357541098c8d51))
-* ensure JwtAdapter calls verify with correct values ([bc5048c](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/bc5048ce6f5ffce656c2076a994cff27e438ab16))
-* ensure JwtAdapter returns a decrypted value on verify success ([6589b72](https://github.com/DiegoSalas27/NodeJs-Typescript-TDD-Clean-Architecture-e-SOLID/commit/6589b72c7b426a26b22ebe6557b5b55f3ea89d29))
 
 
 
