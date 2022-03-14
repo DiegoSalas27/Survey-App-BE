@@ -3,6 +3,11 @@ export type AuthenticationParams = {
   password: string
 }
 
+export type AuthenticationResponse = {
+  accessToken: string
+  name: string
+}
+
 export interface Authentication {
-  auth(authentication: AuthenticationParams): Promise<string>
+  auth(authentication: AuthenticationParams): Promise<AuthenticationResponse>
 }
