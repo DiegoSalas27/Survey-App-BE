@@ -1,3 +1,4 @@
+import { JsonWebTokenError } from 'jsonwebtoken'
 import {
   AccessDeniedError,
   forbidden,
@@ -24,6 +25,9 @@ export class AuthMiddleware implements Middleware {
 
       return forbidden(new AccessDeniedError())
     } catch (error: any) {
+      if (error instanceof JsonWebTokenError) {
+        return forbidden(new AccessDeniedError())
+      }
       return serverError(error)
     }
   }
