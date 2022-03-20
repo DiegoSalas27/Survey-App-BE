@@ -13,6 +13,7 @@ module.exports = {
     '!**/test/**'
   ],
   coverageDirectory: 'coverage',
+  coverageProvider: 'babel',
   testEnvironment: 'node',
   moduleNameMapper: {
     '@presentation/(.*)$': '<rootDir>/src/presentation/$1',
