@@ -15,7 +15,6 @@ export class SaveSurveyResultController implements Controller {
 
   async handle(httpRequest: HttpRequest): Promise<httpResponse> {
     try {
-      console.log('Hello bitch')
       const { surveyId } = httpRequest.params
       const { answer } = httpRequest.body
       const { accountId } = httpRequest
