@@ -108,12 +108,18 @@ export class SurveyResultMongoRepository implements SaveSurveyResultRepository, 
                       else: 0
                     }
                   },
-                  isCurrentAccountAnswer: {
-                    $eq: [
-                      '$$item.answer',
+                  isCurrentAccountAnswerCount: {
+                    $cond: [
                       {
-                        $arrayElemAt: ['$currentAccountAnswer', 0]
-                      }
+                        $eq: [
+                          '$$item.answer',
+                          {
+                            $arrayElemAt: ['$currentAccountAnswer', 0]
+                          }
+                        ]
+                      },
+                      1,
+                      0
                     ]
                   }
                 }
@@ -156,14 +162,16 @@ export class SurveyResultMongoRepository implements SaveSurveyResultRepository, 
           question: '$question',
           date: '$date',
           answer: '$answers.answer',
-          image: '$answers.image',
-          isCurrentAccountAnswer: '$answers.isCurrentAccountAnswer'
+          image: '$answers.image'
         },
         count: {
           $sum: '$answers.count'
         },
         percent: {
           $sum: '$answers.percent'
+        },
+        isCurrentAccountAnswerCount: {
+          $sum: '$answers.isCurrentAccountAnswerCount'
         }
       })
       .project({
@@ -176,7 +184,9 @@ export class SurveyResultMongoRepository implements SaveSurveyResultRepository, 
           image: '$_id.image',
           count: '$count',
           percent: '$percent',
-          isCurrentAccountAnswer: '$_id.isCurrentAccountAnswer'
+          isCurrentAccountAnswer: {
+            $eq: ['$isCurrentAccountAnswerCount', 1]
+          }
         }
       })
       .sort({
