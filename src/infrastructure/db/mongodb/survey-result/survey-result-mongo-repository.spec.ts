@@ -114,13 +114,13 @@ describe('Survey Result Mongo Repository', () => {
       await surveyResultCollection.insertMany([
         {
           surveyId: new ObjectId(survey.id),
-          accountId: new ObjectId(accountId),
+          accountId: new ObjectId(accountId2),
           answer: survey.answers[0].answer,
           date: new Date()
         },
         {
           surveyId: new ObjectId(survey.id),
-          accountId: new ObjectId(accountId2),
+          accountId: new ObjectId(accountId),
           answer: survey.answers[0].answer,
           date: new Date()
         }
@@ -132,7 +132,7 @@ describe('Survey Result Mongo Repository', () => {
       expect(surveyResult.surveyId).toEqual(survey.id)
       expect(surveyResult.answers[0].count).toBe(2)
       expect(surveyResult.answers[0].percent).toBe(100)
-      expect(surveyResult.answers[0].isCurrentAccountAnswer).toBe(true)
+      expect(surveyResult.answers[0].isCurrentAccountAnswer).toBe(false)
       expect(surveyResult.answers[1].count).toBe(0)
       expect(surveyResult.answers[1].percent).toBe(0)
       expect(surveyResult.answers[1].isCurrentAccountAnswer).toBe(false)
