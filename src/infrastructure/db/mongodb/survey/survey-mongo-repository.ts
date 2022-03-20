@@ -13,7 +13,7 @@ export class SurveyMongoRepository implements AddSurveyRepository, LoadSurveysRe
   }
 
   async loadAll(accountId: string): Promise<SurveyModel[]> {
-    const surveyCollection = MongoHelper.getCollection('surveys')
+    const surveyCollection = await MongoHelper.getCollection('surveys')
     const query = new QueryBuilder()
       .lookup({
         from: 'surveyResults',
@@ -27,23 +27,26 @@ export class SurveyMongoRepository implements AddSurveyRepository, LoadSurveysRe
         answers: 1,
         date: 1,
         didAnswer: {
-          $gte: [{
-            $size: {
-              $filter: {
-                $input: '$result',
-                as: 'item',
-                cond: {
-                  $eq: ['$$item.accountId', new ObjectId(accountId)]
+          $gte: [
+            {
+              $size: {
+                $filter: {
+                  input: '$result',
+                  as: 'item',
+                  cond: {
+                    $eq: ['$$item.accountId', new ObjectId(accountId)]
+                  }
                 }
               }
-            }
-          }, 1]
+            },
+            1
+          ]
         }
       })
       .build()
 
-      const surveys = await surveyCollection.aggregate(query).toArray()
-      return MongoHelper.mapArray(surveys)
+    const surveys = await surveyCollection.aggregate(query).toArray()
+    return MongoHelper.mapArray(surveys)
   }
 
   async loadById(id: string): Promise<SurveyModel> {

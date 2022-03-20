@@ -1,21 +1,20 @@
-import { mockLoadSurveysRepository } from '@data/test'
-import { mockSurveysModels, throwError } from '@domain/test'
+import { LoadSurveysRepositorySpy } from '@data/test'
+import { throwError } from '@domain/test'
+import faker from '@faker-js/faker'
 import MockDate from 'mockdate'
 import { DbLoadSurveys } from './db-load-surveys'
-import { LoadSurveys, LoadSurveysRepository } from './db-load-surveys-protocols'
 
 type SutTypes = {
-  sut: LoadSurveys
-  loadSurveysRepositoryStub: LoadSurveysRepository
+  sut: DbLoadSurveys
+  loadSurveysRepositorySpy: LoadSurveysRepositorySpy
 }
 
 const makeSut = (): SutTypes => {
-  const loadSurveysRepositoryStub = mockLoadSurveysRepository()
-  const sut = new DbLoadSurveys(loadSurveysRepositoryStub)
-
+  const loadSurveysRepositorySpy = new LoadSurveysRepositorySpy()
+  const sut = new DbLoadSurveys(loadSurveysRepositorySpy)
   return {
     sut,
-    loadSurveysRepositoryStub
+    loadSurveysRepositorySpy
   }
 }
 
@@ -29,22 +28,22 @@ describe('DbLoadSurveys', () => {
   })
 
   test('Should call LoadSurveysRepository', async () => {
-    const { loadSurveysRepositoryStub, sut } = makeSut()
-    const loadAllSpy = jest.spyOn(loadSurveysRepositoryStub, 'loadAll')
-    await sut.load()
-    expect(loadAllSpy).toHaveBeenCalled()
+    const { sut, loadSurveysRepositorySpy } = makeSut()
+    const accountId = faker.random.uuid()
+    await sut.load(accountId)
+    expect(loadSurveysRepositorySpy.accountId).toBe(accountId)
   })
 
   test('Should return a list of Surveys on success', async () => {
-    const { sut } = makeSut()
-    const surveys = await sut.load()
-    expect(surveys).toEqual(mockSurveysModels())
+    const { sut, loadSurveysRepositorySpy } = makeSut()
+    const surveys = await sut.load(faker.random.uuid())
+    expect(surveys).toEqual(loadSurveysRepositorySpy.surveyModels)
   })
 
   test('Should throw if LoadSurveysRepository throws', async () => {
-    const { loadSurveysRepositoryStub, sut } = makeSut()
-    jest.spyOn(loadSurveysRepositoryStub, 'loadAll').mockImplementationOnce(throwError)
-    const promise = sut.load()
+    const { sut, loadSurveysRepositorySpy } = makeSut()
+    jest.spyOn(loadSurveysRepositorySpy, 'loadAll').mockImplementationOnce(throwError)
+    const promise = sut.load(faker.random.uuid())
     await expect(promise).rejects.toThrow()
   })
 })

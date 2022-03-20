@@ -7,7 +7,7 @@ import { MongoHelper, QueryBuilder } from '../helpers'
 
 export class SurveyResultMongoRepository implements SaveSurveyResultRepository, LoadSurveyResultRepository {
   async save(data: SaveSurveyResultParams): Promise<void> {
-    const surveyResultColletion = MongoHelper.getCollection<SurveyResultModel>('surveysResults')
+    const surveyResultColletion = MongoHelper.getCollection<SurveyResultModel>('surveyResults')
     await surveyResultColletion.findOneAndUpdate(
       {
         surveyId: new ObjectId(data.surveyId),
@@ -25,17 +25,19 @@ export class SurveyResultMongoRepository implements SaveSurveyResultRepository, 
     )
   }
 
-  async loadBySurveyId(surveyId: string): Promise<SurveyResultModel> {
-    const surveyResultCollection = MongoHelper.getCollection<SurveyResultModel>('surveysResults')
+  async loadBySurveyId(surveyId: string, accountId: string): Promise<SurveyResultModel> {
+    const surveyResultCollection = MongoHelper.getCollection('surveyResults')
     const query = new QueryBuilder()
-      .match({ surveyId: new ObjectId(surveyId) })
+      .match({
+        surveyId: new ObjectId(surveyId)
+      })
       .group({
-        _id: 0.0,
+        _id: 0,
         data: {
           $push: '$$ROOT'
         },
         total: {
-          $sum: 1.0
+          $sum: 1
         }
       })
       .unwind({
@@ -43,8 +45,8 @@ export class SurveyResultMongoRepository implements SaveSurveyResultRepository, 
       })
       .lookup({
         from: 'surveys',
-        localField: 'data.surveyId',
         foreignField: '_id',
+        localField: 'data.surveyId',
         as: 'survey'
       })
       .unwind({
@@ -60,11 +62,16 @@ export class SurveyResultMongoRepository implements SaveSurveyResultRepository, 
           answers: '$survey.answers'
         },
         count: {
-          $sum: 1.0
+          $sum: 1
+        },
+        currentAccountAnswer: {
+          $push: {
+            $cond: [{ $eq: ['$data.accountId', new ObjectId(accountId)] }, '$data.answer', null]
+          }
         }
       })
       .project({
-        _id: 0.0,
+        _id: 0,
         surveyId: '$_id.surveyId',
         question: '$_id.question',
         date: '$_id.date',
@@ -82,7 +89,7 @@ export class SurveyResultMongoRepository implements SaveSurveyResultRepository, 
                         $eq: ['$$item.answer', '$_id.answer']
                       },
                       then: '$count',
-                      else: 0.0
+                      else: 0
                     }
                   },
                   percent: {
@@ -95,11 +102,19 @@ export class SurveyResultMongoRepository implements SaveSurveyResultRepository, 
                           {
                             $divide: ['$count', '$_id.total']
                           },
-                          100.0
+                          100
                         ]
                       },
-                      else: 0.0
+                      else: 0
                     }
+                  },
+                  isCurrentAccountAnswer: {
+                    $eq: [
+                      '$$item.answer',
+                      {
+                        $arrayElemAt: ['$currentAccountAnswer', 0]
+                      }
+                    ]
                   }
                 }
               ]
@@ -118,7 +133,7 @@ export class SurveyResultMongoRepository implements SaveSurveyResultRepository, 
         }
       })
       .project({
-        _id: 0.0,
+        _id: 0,
         surveyId: '$_id.surveyId',
         question: '$_id.question',
         date: '$_id.date',
@@ -141,7 +156,8 @@ export class SurveyResultMongoRepository implements SaveSurveyResultRepository, 
           question: '$question',
           date: '$date',
           answer: '$answers.answer',
-          image: '$answers.image'
+          image: '$answers.image',
+          isCurrentAccountAnswer: '$answers.isCurrentAccountAnswer'
         },
         count: {
           $sum: '$answers.count'
@@ -151,7 +167,7 @@ export class SurveyResultMongoRepository implements SaveSurveyResultRepository, 
         }
       })
       .project({
-        _id: 0.0,
+        _id: 0,
         surveyId: '$_id.surveyId',
         question: '$_id.question',
         date: '$_id.date',
@@ -159,11 +175,12 @@ export class SurveyResultMongoRepository implements SaveSurveyResultRepository, 
           answer: '$_id.answer',
           image: '$_id.image',
           count: '$count',
-          percent: '$percent'
+          percent: '$percent',
+          isCurrentAccountAnswer: '$_id.isCurrentAccountAnswer'
         }
       })
       .sort({
-        'answer.count': -1.0
+        'answer.count': -1
       })
       .group({
         _id: {
@@ -176,7 +193,7 @@ export class SurveyResultMongoRepository implements SaveSurveyResultRepository, 
         }
       })
       .project({
-        _id: 0.0,
+        _id: 0,
         surveyId: '$_id.surveyId',
         question: '$_id.question',
         date: '$_id.date',

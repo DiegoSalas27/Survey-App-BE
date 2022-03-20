@@ -5,9 +5,10 @@ export type SurveyResultModel = {
   date: Date
 }
 
-interface SurveyResultAnswerModel {
+type SurveyResultAnswerModel = {
   image?: string
   answer: string
   count: number
   percent: number
+  isCurrentAccountAnswer: boolean
 }

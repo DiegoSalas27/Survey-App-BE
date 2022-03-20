@@ -1,12 +1,11 @@
 import { EmailValidator } from '@validation/protocols/email-validator.interface'
 
-export const mockEmailValidator = (): EmailValidator => {
-  // factory
-  class EmailValidatorStub implements EmailValidator {
-    // mocked object
-    isValid(email: string): boolean {
-      return true
-    }
+export class EmailValidatorSpy implements EmailValidator {
+  isEmailValid = true
+  email: string
+
+  isValid(email: string): boolean {
+    this.email = email
+    return this.isEmailValid
   }
-  return new EmailValidatorStub()
 }

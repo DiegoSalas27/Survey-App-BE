@@ -1,49 +1,38 @@
 export class QueryBuilder {
   private readonly query: object[] = []
 
-  match(data: object): QueryBuilder {
+  private addStep (step: string, data: object): QueryBuilder {
     this.query.push({
-      $match: data
+      [step]: data
     })
     return this
   }
 
-  group(data: object): QueryBuilder {
-    this.query.push({
-      $group: data
-    })
-    return this
+  match (data: object): QueryBuilder {
+    return this.addStep('$match', data)
   }
 
-  unwind(data: object): QueryBuilder {
-    this.query.push({
-      $unwind: data
-    })
-    return this
+  group (data: object): QueryBuilder {
+    return this.addStep('$group', data)
   }
 
-  lookup(data: object): QueryBuilder {
-    this.query.push({
-      $lookup: data
-    })
-    return this
+  sort (data: object): QueryBuilder {
+    return this.addStep('$sort', data)
   }
 
-  project(data: object): QueryBuilder {
-    this.query.push({
-      $project: data
-    })
-    return this
+  unwind (data: object): QueryBuilder {
+    return this.addStep('$unwind', data)
   }
 
-  sort(data: object): QueryBuilder {
-    this.query.push({
-      $sort: data
-    })
-    return this
+  lookup (data: object): QueryBuilder {
+    return this.addStep('$lookup', data)
   }
 
-  build(): object[] {
+  project (data: object): QueryBuilder {
+    return this.addStep('$project', data)
+  }
+
+  build (): object[] {
     return this.query
   }
 }

@@ -1,13 +1,11 @@
 import { Validation } from '@presentation/protocols'
 
-export const mockValidation = (): Validation => {
-  // factory
-  class ValidationStub implements Validation {
-    // mocked object
-    validate(input: any): Error {
-      // the input is generic for any request made
-      return null
-    }
+export class ValidationSpy implements Validation {
+  error: Error = null
+  input: any
+
+  validate (input: any): Error {
+    this.input = input
+    return this.error
   }
-  return new ValidationStub()
 }
