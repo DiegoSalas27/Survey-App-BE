@@ -5,5 +5,5 @@
 
 This repository is contains my implementation of Rodrigo Manguinho's Clean Architecture course.
 
-Original source code is found here: [https://github.com/rmanguinho/clean-react](https://github.com/rmanguinho/clean-ts-api)
+Original source code is found here: [https://github.com/rmanguinho/clean-ts-api](https://github.com/rmanguinho/clean-ts-api)
 
